@@ -6,76 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - CCE Trojan</title>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../css/auth.css">
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo"><a href="../index.php" style="color: #d4af37; text-decoration: none;">CCE Trojan</a></div>
-        <nav>
-            <a href="../landing/landing.php">Home</a>
-            <div class="auth-buttons">
-                <a href="../landing/landing.php" class="btn-login"
-                    style="text-decoration: none; display: flex; align-items: center;">Back</a>
-            </div>
-        </nav>
-    </header>
+    <div class="auth-wrapper register-layout">
+        <!-- Left Side - Register Form -->
+        <div class="auth-right-side">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <div class="form-logo">CCE</div>
+                </div>
 
-    <div class="auth-container flipped">
-        <!-- Left Side - Decorative -->
-        <div class="auth-left">
-            <div class="decorative-content">
-                <div class="decorative-logo">CCE</div>
-                <div class="decorative-title">Join Us Today!</div>
-                <div class="decorative-subtitle">Create your account to start competing with the best athletes</div>
-                <div class="decorative-shapes">
-                    <div class="shape"></div>
-                    <div class="shape"></div>
-                    <div class="shape"></div>
+                <h2 class="auth-form-title">Create an account</h2>
+
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group-modern">
+                        <input type="text" id="name" name="name" placeholder="Full name" required>
+                    </div>
+
+                    <div class="form-group-modern">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="form-group-modern">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="form-group-modern">
+                        <input type="password" id="confirmPassword" name="confirmPassword"
+                            placeholder="Confirm Password" required>
+                    </div>
+
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the Terms of Service</label>
+                    </div>
+
+                    <button type="submit" class="btn-continue">Submit</button>
+                </form>
+
+                <div class="social-buttons-premium">
+                    <button class="social-btn-premium apple-btn" onclick="alert('Apple signup not implemented')">
+                        <i class="fab fa-apple"></i> Apple
+                    </button>
+                    <button class="social-btn-premium google-btn" onclick="alert('Google signup not implemented')">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                </div>
+
+                <div class="auth-footer-premium">
+                    Have any account? <a href="login.php">Sign in</a>
                 </div>
             </div>
         </div>
 
-        <!-- Right Side - Register Form -->
-        <div class="auth-right">
-            <div class="form-container">
-                <div class="form-header">
-                    <h2>Create Your Account</h2>
-                </div>
-                <form id="registerForm">
-                    <div class="form-group">
-                        <label for="name">Full Name:</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address:</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number (Optional):</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" placeholder="Create a password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm Password:</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword"
-                            placeholder="Confirm your password" required>
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            <input type="checkbox" id="terms" required style="margin-right: 0.5rem;"> I agree to the
-                            Terms of Service
-                        </label>
-                    </div>
-                    <button type="submit" class="submit-btn">Create Account</button>
-                </form>
-                <div class="toggle-auth">
-                    Already have an account? <a href="login.php">Login here</a>
-                </div>
+        <!-- Right Side - Decorative with Gradient -->
+        <div class="auth-left-side">
+            <div class="gradient-bg"></div>
+            <div class="shapes-container">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            <div class="decorative-content-left">
+                <div class="logo-text">CCE</div>
+                <div class="logo-subtext">TROJAN</div>
+                <h2 class="auth-title">Welcome Page</h2>
+                <p class="auth-subtitle">Join the community today</p>
+                <p class="website-url">www.ccetrojan.com</p>
             </div>
         </div>
     </div>
@@ -95,7 +95,6 @@
                 return;
             }
 
-            // Save to localStorage
             const registerData = {
                 name: name,
                 email: email,
