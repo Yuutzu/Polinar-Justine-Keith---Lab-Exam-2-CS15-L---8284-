@@ -1,0 +1,411 @@
+/* Auth Pages Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d4af37;
+    font-family: 'Jersey 25', sans-serif;
+}
+
+nav {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+}
+
+nav a:hover {
+    color: #1a1a1a;
+    background-color: #d4af37;
+}
+
+/* Auth Container */
+.auth-container {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+/* Left Side - Decorative (Login) / Form (Register) */
+.auth-left {
+    flex: 1;
+    background: linear-gradient(135deg, #FFAA33 0%, #FFB84D 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-left::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: -100px;
+    left: -100px;
+}
+
+.auth-left::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    bottom: -50px;
+    right: -50px;
+}
+
+.decorative-content {
+    z-index: 2;
+    text-align: center;
+    color: #1a1a1a;
+    animation: fadeInDown 0.7s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.decorative-logo {
+    font-size: 4.5rem;
+    font-weight: bold;
+    font-family: 'Jersey 25', sans-serif;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.decorative-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: 'Jersey 25', sans-serif;
+    letter-spacing: 1px;
+}
+
+.decorative-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    opacity: 0.85;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.decorative-shapes {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.shape {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(26, 26, 26, 0.15);
+    border-radius: 50%;
+    animation: float 4s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.shape:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.shape:nth-child(3) {
+    animation-delay: 1.4s;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px);
+    }
+    50% { 
+        transform: translateY(-25px);
+    }
+}
+
+.website-url {
+    position: absolute;
+    bottom: 2rem;
+    color: #1a1a1a;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Right Side - Form (Login) / Decorative (Register) */
+.auth-right {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 450px;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.form-header {
+    margin-bottom: 2.5rem;
+}
+
+.form-header h2 {
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    font-size: 0.95rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: transparent;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-bottom-color: #FFAA33;
+    box-shadow: 0 2px 0 #FFAA33;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    cursor: pointer;
+    accent-color: #FFAA33;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #FFAA33 0%, #FFB84D 100%);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(255, 170, 51, 0.2);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(255, 170, 51, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(255, 170, 51, 0.3);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.divider-text {
+    padding: 0 1rem;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: all 0.3s;
+}
+
+.google-btn:hover {
+    border-color: #FFAA33;
+    background-color: #fff9f0;
+}
+
+.google-icon {
+    font-size: 1.2rem;
+}
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.toggle-auth a:hover {
+    text-decoration: underline;
+    color: #FFB84D
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.toggle-auth a {
+    color: #FFAA33;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.toggle-auth a:hover {
+    text-decoration: underline;
+}
+
+/* Flipped styles for Register */
+.auth-container.flipped {
+    flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .auth-container,
+    .auth-container.flipped {
+        flex-direction: column;
+    }
+
+    .auth-left,
+    .auth-right {
+        flex: none;
+        min-height: 50vh;
+    }
+
+    .decorative-title {
+        font-size: 1.8rem;
+    }
+
+    .decorative-shapes {
+        gap: 1rem;
+    }
+
+    .shape {
+        width: 70px;
+        height: 70px;
+    }
+
+    .form-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-left,
+    .auth-right {
+        padding: 2rem 1rem;
+    }
+
+    .form-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .decorative-title {
+        font-size: 1.5rem;
+    }
+
+    .decorative-shapes {
+        flex-direction: column;
+    }
+}

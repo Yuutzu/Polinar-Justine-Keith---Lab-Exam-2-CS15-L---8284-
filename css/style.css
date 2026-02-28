@@ -1,0 +1,754 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d4af37;
+    font-family: 'Jersey 25', sans-serif;
+}
+
+nav {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+}
+
+nav a:hover {
+    color: #1a1a1a;
+    background-color: #d4af37;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-login,
+.btn-register,
+.auth-buttons a {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-login,
+.auth-buttons a:first-child {
+    background-color: #d4af37;
+    color: #1a1a1a;
+}
+
+.btn-login:hover,
+.auth-buttons a:first-child:hover {
+    background-color: #ffc107;
+    transform: scale(1.08);
+}
+
+.btn-register,
+.auth-buttons a:last-child {
+    background-color: #1a1a1a;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+}
+
+.btn-register:hover,
+.auth-buttons a:last-child:hover {
+    background-color: #d4af37;
+    color: #1a1a1a;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, rgba(255, 170, 51, 0.7), rgba(255, 170, 51, 0.7)), url('../Photos/Background/black-and-white-digital-background-with-numbers-on-the-screen-binary-code-matrix-data-technologies-vector.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 8rem 2rem;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 5.5rem;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-family: 'Jersey 25', sans-serif;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: #333;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: white;
+    color: #1a1a1a;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #1a1a1a;
+    color: #d4af37;
+}
+
+/* Featured Sports Section */
+.featured-sports {
+    background: linear-gradient(135deg, #1a1a1a 0%, #FFAA33 100%);
+    padding: 6rem 2rem;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: #FFAA33;
+    font-family: 'Jersey 25', sans-serif;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+}
+
+.featured-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.featured-sports .featured-container {
+    grid-template-columns: 1fr 1fr;
+}
+
+.featured-sports .carousel-container {
+    order: 1;
+}
+
+.featured-sports .featured-text {
+    order: 2;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.carousel-btn {
+    background-color: #FFAA33;
+    color: #1a1a1a;
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.carousel-btn:hover {
+    background-color: #FFB84D;
+    transform: scale(1.1);
+}
+
+.carousel-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 650px;
+    height: 450px;
+}
+
+.placeholder-box {
+    background-color: #f0f0f0;
+    border-radius: 1.5rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+}
+
+.dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background-color: #FFAA33;
+    width: 1.2rem;
+}
+
+.featured-text {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 450px;
+}
+
+.featured-text h3 {
+    font-size: 2rem;
+    font-family: 'Jersey 25', sans-serif;
+    color: #FFAA33;
+}
+
+.featured-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+/* Featured Events Section */
+.featured-events {
+    background: linear-gradient(135deg, #FFAA33 0%, #FFB84D 100%);
+    padding: 4rem 2rem;
+}
+
+.featured-events .featured-container {
+    grid-template-columns: 1fr 1fr;
+}
+
+.featured-events .featured-text {
+    min-height: 450px;
+}
+
+.featured-events .section-title {
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+}
+
+.featured-events .featured-text {
+    color: #1a1a1a;
+}
+
+.featured-events .featured-text h3 {
+    font-size: 2rem;
+    color: #1a1a1a;
+}
+
+.featured-events .featured-text p {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+/* Featured Esports Section */
+.featured-esports {
+    background: linear-gradient(135deg, #FFAA33 0%, #1a1a1a 100%);
+    padding: 6rem 2rem;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.featured-esports .featured-container {
+    grid-template-columns: 1fr 1fr;
+}
+
+.featured-esports .carousel-container {
+    order: 2;
+}
+
+.featured-esports .featured-text {
+    order: 1;
+    min-height: 450px;
+}
+
+/* More Events Section */
+.more-events {
+    background: linear-gradient(135deg, #FFAA33 0%, #FFB84D 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.more-events .section-title {
+    color: #1a1a1a;
+}
+
+.more-events>p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event-card {
+    background-color: #f0f0f0;
+    border-radius: 2rem;
+    aspect-ratio: 16/10;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.event-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Ready to Compete Section */
+.ready-to-compete {
+    background: linear-gradient(135deg, #1a1a1a 0%, #FFAA33 100%);
+    padding: 8rem 4rem;
+    text-align: center;
+    color: white;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    margin: 0 2rem 3rem 2rem;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ready-to-compete h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Jersey 25', sans-serif;
+    font-weight: bold;
+}
+
+.ready-to-compete p {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ready-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.btn-register-today,
+.ready-buttons a .btn-register-today {
+    background-color: white;
+    color: #1a1a1a;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-register-today:hover,
+.ready-buttons a:hover .btn-register-today {
+    background-color: #FFB84D;
+    transform: scale(1.05);
+}
+
+.btn-login-account {
+    background-color: transparent;
+    color: white;
+    padding: 1rem 3rem;
+    border: 2px solid white;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-login-account:hover {
+    background-color: white;
+    color: #1a1a1a;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #999;
+    text-align: center;
+    padding: 3rem 2rem;
+    font-size: 1rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.modal h2 {
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #FFAA33;
+    padding-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="phone"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 0.3rem;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="phone"]:focus {
+    outline: none;
+    border-color: #FFAA33;
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-submit {
+    flex: 1;
+    padding: 0.8rem;
+    background-color: #FFAA33;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #FFB84D;
+    transform: scale(1.02);
+}
+
+.btn-cancel {
+    flex: 1;
+    padding: 0.8rem;
+    background-color: #f0f0f0;
+    color: #1a1a1a;
+    border: 1px solid #ddd;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-cancel:hover {
+    background-color: #e0e0e0;
+}
+
+.success-message {
+    display: none;
+    background-color: #4caf50;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.toggle-form {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.toggle-form a {
+    color: #FFAA33;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.toggle-form a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-sports,
+    .featured-esports {
+        min-height: auto;
+        padding: 4rem 2rem;
+    }
+
+    .ready-to-compete h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-container {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-container {
+        flex-direction: column;
+    }
+
+    .featured-container {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-sports .carousel-container,
+    .featured-esports .carousel-container {
+        order: 0 !important;
+    }
+
+    .featured-sports .featured-text,
+    .featured-esports .featured-text {
+        order: 0 !important;
+    }
+
+    .featured-esports .carousel-container {
+        order: 0;
+    }
+
+    .featured-esports .featured-text {
+        order: 0;
+    }
+
+    nav {
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .ready-to-compete h2 {
+        font-size: 1.8rem;
+    }
+
+    .ready-buttons {
+        flex-direction: column;
+    }
+
+    .btn-register-today,
+    .btn-login-account {
+        width: 100%;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .carousel-wrapper {
+        max-width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .event-card:hover {
+        transform: scale(1.05);
+    }
+
+    .carousel-wrapper {
+        max-width: 200px;
+        height: 200px;
+    }
+
+    .btn-login,
+    .btn-register {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
