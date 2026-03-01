@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCE Trojan - Ignite Your Competitive Edge</title>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -33,67 +33,78 @@
         <p>Join our platform to access premium sports events and compete with the best athletes around the world. Don't
             miss out on your chance to become a champion.</p>
         <div class="hero-buttons">
-            <button class="btn-primary" onclick="openLoginModal()">Get Started</button>
-            <button class="btn-primary" onclick="scrollToFeatures()"
-                style="background-color: #1a1a1a; color: #FFAA33;">Learn More</button>
+            <a href="../backend/login.php" style="text-decoration: none;"><button class="btn-primary">Get
+                    Started</button></a>
+            <button class="btn-primary" style="background-color: #1a1a1a; color: #FFAA33;">Learn More</button>
         </div>
     </section>
 
-    <!-- Featured Sports Section -->
-    <section class="featured-sports" id="sports">
-        <h2 class="section-title">Featured Sports</h2>
-        <div class="featured-container">
-            <div class="carousel-container">
-                <button class="carousel-btn" onclick="prevSlide('sports')">&#10094;</button>
-                <div class="carousel-wrapper">
-                    <div class="placeholder-box">
-                        <div class="dots">
-                            <div class="dot active"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
+    <!-- Featured Sports & Esports Combined Section -->
+    <section class="featured-showcase" id="sports">
+        <!-- Sports Content -->
+        <div class="showcase-content">
+            <h2 class="section-title">Featured Sports</h2>
+            <div class="featured-container">
+                <div class="carousel-container">
+                    <button class="carousel-btn" onclick="prevSlide('sports')">&#10094;</button>
+                    <div class="carousel-wrapper">
+                        <div class="placeholder-box">
+                            <div class="dots">
+                                <div class="dot active"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
                         </div>
                     </div>
+                    <button class="carousel-btn" onclick="nextSlide('sports')">&#10095;</button>
                 </div>
-                <button class="carousel-btn" onclick="nextSlide('sports')">&#10095;</button>
+                <div class="featured-text">
+                    <h3 style="color: #FFAA33; margin-bottom: 1rem;">Discover Amazing Sports</h3>
+                    <p>Explore a wide variety of sports competitions and events tailored to your interests. Whether
+                        you're
+                        into football, basketball, tennis, or any other sport, we have something for everyone.</p>
+                    <p>Connect with athletes, join teams, and participate in tournaments that matter.</p>
+                </div>
             </div>
-            <div class="featured-text">
-                <h3 style="color: #FFAA33; margin-bottom: 1rem;">Discover Amazing Sports</h3>
-                <p>Explore a wide variety of sports competitions and events tailored to your interests. Whether you're
-                    into football, basketball, tennis, or any other sport, we have something for everyone.</p>
-                <p>Connect with athletes, join teams, and participate in tournaments that matter.</p>
+        </div>
+
+        <!-- Esports Content -->
+        <div class="showcase-content">
+            <h2 class="section-title">Featured Esports</h2>
+            <div class="featured-container">
+                <div class="featured-text">
+                    <h3 style="color: #FFAA33; margin-bottom: 1rem;">Step Into the Digital Arena</h3>
+                    <p>Experience the excitement of competitive esports with top players and exciting tournaments. From
+                        MOBAs to FPS games, compete at the highest level.</p>
+                    <p>Join our vibrant gaming community and showcase your skills to the world.</p>
+                </div>
+                <div class="carousel-container">
+                    <button class="carousel-btn" onclick="prevSlide('esports')">&#10094;</button>
+                    <div class="carousel-wrapper">
+                        <div class="placeholder-box">
+                            <div class="dots">
+                                <div class="dot active"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn" onclick="nextSlide('esports')">&#10095;</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Esports Section -->
-    <section class="featured-esports" id="esports">
-        <h2 class="section-title">Featured Esports</h2>
-        <div class="featured-container">
-            <div class="featured-text">
-                <h3 style="color: #FFAA33; margin-bottom: 1rem;">Step Into the Digital Arena</h3>
-                <p>Experience the excitement of competitive esports with top players and exciting tournaments. From
-                    MOBAs to FPS games, compete at the highest level.</p>
-                <p>Join our vibrant gaming community and showcase your skills to the world.</p>
-            </div>
-            <div class="carousel-container">
-                <button class="carousel-btn" onclick="prevSlide('esports')">&#10094;</button>
-                <div class="carousel-wrapper">
-                    <div class="placeholder-box">
-                        <div class="dots">
-                            <div class="dot active"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-btn" onclick="nextSlide('esports')">&#10095;</button>
-            </div>
-        </div>
-    </section>
+    <!-- Decorative Divider -->
+    <div class="decorative-divider">
+        <div class="divider-shape" style="animation-delay: 0s;"></div>
+        <div class="divider-shape" style="animation-delay: 0.5s;"></div>
+        <div class="divider-shape" style="animation-delay: 1s;"></div>
+    </div>
 
     <!-- More Events Section -->
     <section class="more-events" id="events">
@@ -217,20 +228,31 @@
 
         // Carousel Functions
         function nextSlide(type) {
-            const dots = document.querySelectorAll(`#${type === 'sports' ? 'sports' : 'esports'} .dot`);
+            let container = null;
+            if (type === 'sports') {
+                container = document.querySelectorAll('.featured-showcase .showcase-content')[0];
+            } else {
+                container = document.querySelectorAll('.featured-showcase .showcase-content')[1];
+            }
+            const dots = container.querySelectorAll('.dot');
             carouselState[type] = (carouselState[type] + 1) % dots.length;
-            updateCarousel(type);
+            updateCarousel(type, container);
         }
 
         function prevSlide(type) {
-            const dots = document.querySelectorAll(`#${type === 'sports' ? 'sports' : 'esports'} .dot`);
+            let container = null;
+            if (type === 'sports') {
+                container = document.querySelectorAll('.featured-showcase .showcase-content')[0];
+            } else {
+                container = document.querySelectorAll('.featured-showcase .showcase-content')[1];
+            }
+            const dots = container.querySelectorAll('.dot');
             carouselState[type] = (carouselState[type] - 1 + dots.length) % dots.length;
-            updateCarousel(type);
+            updateCarousel(type, container);
         }
 
-        function updateCarousel(type) {
-            const section = document.getElementById(type);
-            const dots = section.querySelectorAll('.dot');
+        function updateCarousel(type, container) {
+            const dots = container.querySelectorAll('.dot');
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === carouselState[type]);
             });

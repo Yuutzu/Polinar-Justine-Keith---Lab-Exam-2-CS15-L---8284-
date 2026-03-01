@@ -96,12 +96,51 @@ nav a:hover {
     color: #1a1a1a;
 }
 
+/* Static Color Backgrounds */
+.hero {
+    background-image: url('../photos/background/Yellow and Black (Geometric).jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-showcase {
+    background: linear-gradient(315deg, #FFAA33 0%, #1a1a1a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.more-events {
+    background: linear-gradient(135deg, #FFAA33 0%, #FFB84D 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.decorative-divider {
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.ready-to-compete {
+    background: linear-gradient(135deg, #1a1a1a 0%, #FFAA33 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before,
+.featured-showcase::before,
+.more-events::before,
+.hero::after,
+.featured-showcase::after,
+.more-events::after {
+    content: none;
+}
+
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, rgba(255, 170, 51, 0.7), rgba(255, 170, 51, 0.7)), url('../Photos/Background/black-and-white-digital-background-with-numbers-on-the-screen-binary-code-matrix-data-technologies-vector.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     padding: 8rem 2rem;
     text-align: center;
     min-height: 100vh;
@@ -110,19 +149,135 @@ nav a:hover {
     justify-content: center;
 }
 
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleInUp {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes rotateShape {
+    0% {
+        transform: rotate(0deg) translateY(0px);
+    }
+    50% {
+        transform: rotate(180deg) translateY(-20px);
+    }
+    100% {
+        transform: rotate(360deg) translateY(0px);
+    }
+}
+
+@keyframes floatHover {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+/* Decorative Geometric Shapes */
+.shape-decor {
+    position: absolute;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.shape-decor.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #1a1a1a;
+}
+
+.shape-decor.triangle:hover {
+    opacity: 0.2;
+}
+
+.shape-decor.square {
+    width: 80px;
+    height: 80px;
+    background: #1a1a1a;
+}
+
+.shape-decor.square:hover {
+    opacity: 0.3;
+}
+
+.shape-decor.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #1a1a1a;
+}
+
+.shape-decor.circle:hover {
+    opacity: 0.4;
+}
+
+.shape-decor.diamond {
+    width: 60px;
+    height: 60px;
+    background: #1a1a1a;
+    transform: rotate(45deg);
+}
+
+.shape-decor.diamond:hover {
+    opacity: 0.3;
+}
+
+.showcase-content::before,
+.showcase-content::after {
+    content: none;
+}
+
 .hero h1 {
     font-size: 5.5rem;
     margin-bottom: 1.5rem;
-    color: #1a1a1a;
+    color: #ffffff;
     font-weight: bold;
     font-family: 'Jersey 25', sans-serif;
     line-height: 1.2;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
 }
 
 .hero p {
     font-size: 1.3rem;
     margin-bottom: 2.5rem;
-    color: #333;
+    color: #f3f3f3;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -149,11 +304,12 @@ nav a:hover {
 .btn-primary:hover {
     background-color: #1a1a1a;
     color: #d4af37;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Featured Sports Section */
 .featured-sports {
-    background: linear-gradient(135deg, #1a1a1a 0%, #FFAA33 100%);
+    background: transparent;
     padding: 6rem 2rem;
     color: white;
     min-height: 100vh;
@@ -163,14 +319,52 @@ nav a:hover {
     align-items: center;
 }
 
+/* Featured Esports Section */
+.featured-esports {
+    background: transparent;
+    padding: 6rem 2rem;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Combined Featured Showcase Section */
+.featured-showcase {
+    color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.showcase-content {
+    padding: 6rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.showcase-content:nth-child(2) {
+    z-index: 2;
+}
+
 .section-title {
     font-size: 3rem;
     margin-bottom: 4rem;
-    color: #FFAA33;
+    color: #ffffff;
     font-family: 'Jersey 25', sans-serif;
     align-self: center;
     width: 100%;
     text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .featured-container {
@@ -194,11 +388,36 @@ nav a:hover {
     order: 2;
 }
 
+.featured-showcase .featured-container {
+    grid-template-columns: 1fr 1fr;
+}
+
+.showcase-content .carousel-container {
+    order: 1;
+}
+
+.showcase-content:nth-child(2) .carousel-container {
+    order: 2;
+}
+
+.showcase-content .featured-text {
+    order: 2;
+}
+
+.showcase-content:nth-child(2) .featured-text {
+    order: 1;
+}
+
 .carousel-container {
     position: relative;
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    z-index: 2;
+}
+
+.showcase-content:hover .carousel-container {
+    transform: none;
 }
 
 .carousel-btn {
@@ -216,7 +435,6 @@ nav a:hover {
 
 .carousel-btn:hover {
     background-color: #FFB84D;
-    transform: scale(1.1);
 }
 
 .carousel-wrapper {
@@ -267,18 +485,24 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     min-height: 450px;
+    z-index: 2;
 }
 
 .featured-text h3 {
     font-size: 2rem;
     font-family: 'Jersey 25', sans-serif;
-    color: #FFAA33;
+    color: #FFAA33 !important;
 }
 
 .featured-text p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    color: #ccc;
+    color: #f2f2f2;
+}
+
+.showcase-content:hover .featured-text p {
+    color: white;
+    transform: none;
 }
 
 /* Featured Events Section */
@@ -339,21 +563,36 @@ nav a:hover {
     min-height: 450px;
 }
 
+
+.divider-shape {
+    display: none;
+}
+
+.divider-shape:hover {
+    transform: none;
+}
+
 /* More Events Section */
 .more-events {
-    background: linear-gradient(135deg, #FFAA33 0%, #FFB84D 100%);
     padding: 4rem 2rem;
     text-align: center;
 }
 
 .more-events .section-title {
-    color: #1a1a1a;
+    color: #ffffff;
 }
 
-.more-events>p {
+.more-events > * {
+    position: relative;
+    z-index: 2;
+}
+
+.more-events > p {
     font-size: 1.2rem;
-    color: #333;
+    color: #f2f2f2;
     margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
 }
 
 .events-grid {
@@ -364,6 +603,8 @@ nav a:hover {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    z-index: 2;
 }
 
 .event-card {
@@ -382,7 +623,6 @@ nav a:hover {
 
 /* Ready to Compete Section */
 .ready-to-compete {
-    background: linear-gradient(135deg, #1a1a1a 0%, #FFAA33 100%);
     padding: 8rem 4rem;
     text-align: center;
     color: white;
@@ -396,6 +636,16 @@ nav a:hover {
     max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.ready-to-compete::before {
+    content: none;
+}
+
+.ready-to-compete::after {
+    content: none;
 }
 
 .ready-to-compete h2 {
@@ -403,6 +653,8 @@ nav a:hover {
     margin-bottom: 2rem;
     font-family: 'Jersey 25', sans-serif;
     font-weight: bold;
+    position: relative;
+    z-index: 2;
 }
 
 .ready-to-compete p {
@@ -479,7 +731,6 @@ footer p {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    animation: fadeIn 0.3s;
 }
 
 @keyframes fadeIn {
@@ -500,7 +751,6 @@ footer p {
     width: 90%;
     max-width: 400px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    animation: slideDown 0.3s;
 }
 
 @keyframes slideDown {
