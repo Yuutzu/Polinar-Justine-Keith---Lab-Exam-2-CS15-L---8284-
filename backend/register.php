@@ -7,16 +7,18 @@
     <title>Register - CCE Trojan</title>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/auth.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
+    <a href="../landing/landing.php" class="home-btn" title="Back to Home">
+        <i class="fas fa-arrow-left"></i>
+    </a>
     <div class="auth-wrapper register-layout">
         <!-- Left Side - Register Form -->
         <div class="auth-right-side">
             <div class="form-wrapper">
                 <div class="form-header">
-                    <div class="form-logo">CCE</div>
                 </div>
 
                 <h2 class="auth-form-title">Create an account</h2>
@@ -44,13 +46,12 @@
                         <label for="terms">I agree to the Terms of Service</label>
                     </div>
 
-                    <button type="submit" class="btn-continue">Submit</button>
+                    <button type="submit" class="btn-continue">CREATE ACCOUNT</button>
                 </form>
 
+                <div class="or-divider">OR</div>
+
                 <div class="social-buttons-premium">
-                    <button class="social-btn-premium apple-btn" onclick="alert('Apple signup not implemented')">
-                        <i class="fab fa-apple"></i> Apple
-                    </button>
                     <button class="social-btn-premium google-btn" onclick="alert('Google signup not implemented')">
                         <i class="fab fa-google"></i> Google
                     </button>
@@ -69,6 +70,11 @@
                 <div class="shape shape-1"></div>
                 <div class="shape shape-2"></div>
                 <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+                <div class="shape shape-6"></div>
+                <div class="shape shape-7"></div>
+                <div class="shape shape-8"></div>
             </div>
             <div class="decorative-content-left">
                 <div class="logo-text">CCE</div>

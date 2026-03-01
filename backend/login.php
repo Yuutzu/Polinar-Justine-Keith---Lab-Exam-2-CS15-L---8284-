@@ -7,10 +7,13 @@
     <title>Login - CCE Trojan</title>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/auth.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
+    <a href="../landing/landing.php" class="home-btn" title="Back to Home">
+        <i class="fas fa-arrow-left"></i>
+    </a>
     <div class="auth-wrapper">
         <!-- Left Side - Decorative with Gradient -->
         <div class="auth-left-side">
@@ -19,6 +22,11 @@
                 <div class="shape shape-1"></div>
                 <div class="shape shape-2"></div>
                 <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+                <div class="shape shape-6"></div>
+                <div class="shape shape-7"></div>
+                <div class="shape shape-8"></div>
             </div>
             <div class="decorative-content-left">
                 <div class="logo-text">CCE</div>
@@ -45,19 +53,14 @@
                         <div class="input-line"></div>
                     </div>
 
-                    <button type="submit" class="btn-continue">CONTINUE</button>
+                    <button type="submit" class="btn-continue">LOGIN</button>
                 </form>
 
-                <div class="divider-modern">
-                    <span>or Connect with Social Media</span>
-                </div>
+                <div class="or-divider">OR</div>
 
-                <div class="social-buttons">
-                    <button class="social-btn twitter-btn" onclick="alert('Twitter login not implemented')">
-                        <i class="fab fa-twitter"></i> Sign in with Twitter
-                    </button>
-                    <button class="social-btn facebook-btn" onclick="alert('Facebook login not implemented')">
-                        <i class="fab fa-facebook"></i> Sign in with Facebook
+                <div class="social-buttons-premium">
+                    <button class="social-btn-premium google-btn" onclick="alert('Google login not implemented')">
+                        <i class="fab fa-google"></i> Google
                     </button>
                 </div>
 
